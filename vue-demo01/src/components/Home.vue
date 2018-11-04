@@ -22,13 +22,21 @@
     <hr>
 
     <h5>12 vue 请求数据演示</h5>
-    <button @click="getData()">请求数据</button>
+    <button @click="getDataByVueResource()">使用vue-resource请求数据</button>
+    <button @click="getDataByAxios()">使用Axios请求数据</button>
 
     <hr>
     <br/>
 
     <ul>
+      <span style="color: red">使用vue-resource请求数据:</span>
       <li v-for="item in list">
+        {{item.title}}
+      </li>
+    </ul>
+    <ul>
+      <span style="color: blue">使用Axios请求数据:</span>
+      <li v-for="item in list1">
         {{item.title}}
       </li>
     </ul>
@@ -41,6 +49,7 @@
   //引入头部组件
   import Header from './Header';
   import Life from './Lify';
+  import Axios from 'axios';
 
   export default {
     name: "Home",
@@ -49,6 +58,7 @@
         msg: '我是一个首页组件msg',
         flag: true,
         list: [],
+        list1: [],
       }
     },
     components: {
@@ -60,7 +70,7 @@
 
         alert(this.msg)
       },
-      getData: function () {
+      getDataByVueResource: function () {
         //请求数据
 
         var api = 'http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1';
@@ -76,13 +86,26 @@
 
           console.log(err)
         })
+      },
+      getDataByAxios: function () {
+
+        var api = 'http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1';
+        Axios.get(api).then((response) => {
+
+          console.log(response);
+          this.list1 = response.data.result;
+        }).catch((error) => {
+
+          console.log(error);
+        })
       }
 
     },
     mounted() {
 
       //页面一加载就请求数据
-      this.getData();
+      this.getDataByVueResource();
+      this.getDataByAxios();
     }
   }
 </script>

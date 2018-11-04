@@ -215,6 +215,11 @@
     <h5>
       请求数据的模板:<br>
       1.vue-resource 官方提供的vue 的一个插件<br>
+      2.axios 的使用:<br>
+          1.安装 npm install axios --save<br>
+          2.哪里用哪里引入axios<br>
+      2.axios 的使用:<br>
+      <!--3.vue-resource 官方提供的vue 的一个插件<br>-->
 
     </h5>
   </div>

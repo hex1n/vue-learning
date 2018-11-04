@@ -47,6 +47,11 @@
       </li>
     </ul>
 
+    <h2>16</h2>
+    <br>
+    <button @click="emitNews()">给News组件广播数据</button>
+    <br>
+
 
   </div>
 </template>
@@ -56,6 +61,7 @@
   import Header from './Header';
   import Life from './Lify';
   import Axios from 'axios';
+  import VueEvent from '../model/VueEvent';
 
   export default {
     name: "Home",
@@ -113,6 +119,10 @@
         alert(this.$refs.header.msg)
         //获取子组件的run方法
         // this.$refs.header.run();
+      },
+      emitNews: function () {
+        //广播数据
+        VueEvent.$emit('to-news',this.msg);
       }
 
     },
@@ -121,6 +131,11 @@
       //页面一加载就请求数据
       this.getDataByVueResource();
       this.getDataByAxios();
+      //监听news广播的数据
+      VueEvent.$on('to-home',function (data) {
+
+        console.log(data)
+      })
     }
   }
 </script>

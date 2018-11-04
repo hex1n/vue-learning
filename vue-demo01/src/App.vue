@@ -246,6 +246,24 @@
     <h3>子组件主动获取父组件的数据和方法:</h3>
     <p>this.$parent.数据</p>
     <p>this.$parent.方法</p>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h2>16 vue 非父子组件传值</h2>
+    <h4>非父子组件传值</h4>
+    <ul>
+      <li>1.新建一个js文件,然后引入vue 实例化vue 最后暴露这个实例</li>
+      <li>2.在要广播的地方引入刚才定义的实例</li>
+      <li>3.通过VueEmit.$emit('名称','数据')</li>
+      <li>4.在接收数据的地方通过$on接收广播的数据: VueEmit.$on('名称',function(){})</li>
+    </ul>
+    <hr>
+    <br>
+    <v-home></v-home>
+    <br>
+    <hr>
+    <v-news></v-news>
 
 
   </div>

@@ -231,6 +231,21 @@
       <li>1.父组件调用子组件的时候,绑定动态属性:v-header :title="title"></li>
       <li>2.在子组件里面通过 props接收父组件传过来的数据></li>
     </ul>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h2>15 父组件主动获取子组件的数据和方法 子组件主动获取父组件的数据和方法</h2>
+    <h3>父组件主动获取子组件的数据和方法:</h3>
+    <p>1.调用子组件的时候定义一个ref: </p>
+    <p>例:< v-header ref="header" > < / v-header></p>
+    <p>2.在父组件里面通过 this.$refs.header.属性 </p>
+    <p>在父组件里面通过 this.$refs.header.方法 </p>
+    <br>
+    <hr>
+    <h3>子组件主动获取父组件的数据和方法:</h3>
+    <p>this.$parent.数据</p>
+    <p>this.$parent.方法</p>
 
 
   </div>

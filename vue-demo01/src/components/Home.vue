@@ -3,7 +3,9 @@
   <div>
 
     <v-header :title="title" :homemsg="msg" :run="run" :home="this"></v-header>
-        首页组件
+    <v-header ref="header"></v-header>
+    首页组件 <br/>
+    <button @click="getChildData()">父组件主动获取子组件的数据和方法</button>
     <br>
 
     <hr>
@@ -74,7 +76,7 @@
       run: function (data) {
 
         alert(this.msg);
-        alert('我是Home组件的run方法'+data);
+        alert('我是Home组件的run方法' + data);
       },
       getDataByVueResource: function () {
         //请求数据
@@ -104,6 +106,13 @@
 
           console.log(error);
         })
+      },
+      getChildData: function () {
+
+        //获取子组件中的msg
+        alert(this.$refs.header.msg)
+        //获取子组件的run方法
+        // this.$refs.header.run();
       }
 
     },

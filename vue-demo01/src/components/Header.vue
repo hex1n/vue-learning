@@ -8,6 +8,10 @@
     <br>
     <button @click="getParent()">获取父组件的数据和方法</button>
 
+    <br>
+    <hr>
+    <button @click="getParentData()">子组件主动获取父组件的数据和方法</button>
+
 
     <ul>
       <li>
@@ -34,11 +38,20 @@
       }
     },
     methods: {
+
+      run() {
+
+        alert('我是子组件的run方法')
+      },
       getParent: function () {
         // alert(this.title)
         // alert(this.home.title)
         alert(this.home.run())
 
+      },
+      getParentData: function () {
+
+        alert(this.$parent.msg);
       }
 
     },

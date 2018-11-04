@@ -207,7 +207,16 @@
       这些方法就叫做生命周期函数: mounted{}
     </h5>
 
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h2>12 vue请求数据</h2>
+    <h5>
+      请求数据的模板:<br>
+      1.vue-resource 官方提供的vue 的一个插件<br>
 
+    </h5>
   </div>
 </template>
 

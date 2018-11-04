@@ -196,6 +196,17 @@
       <v-news></v-news>
     </div>
 
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h2>11 生命周期函数</h2>
+    <h5>
+      生命周期函数:
+      组件挂载 以及 组件更新 组件销毁的时候出发的一系列的方法
+      这些方法就叫做生命周期函数: mounted{}
+    </h5>
+
 
   </div>
 </template>
@@ -351,6 +362,7 @@
     mounted() {
       //生命周期函数  vue 页面刷新就会触发的方法
 
+      console.log("我是一个生命周期函数")
       var list = storage.get('list');
       if (list) {
         this.list4 = list;

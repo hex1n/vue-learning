@@ -2,7 +2,8 @@
   <!--所有的内容要被根节点包含起来-->
   <div>
 
-    <v-header></v-header>
+    <v-header :title="title" :homemsg="msg" :run="run" :home="this"></v-header>
+        首页组件
     <br>
 
     <hr>
@@ -21,12 +22,15 @@
     <br>
     <hr>
 
-    <h5>12 vue 请求数据演示</h5>
+    <h5>12 13 vue 请求数据演示</h5>
     <button @click="getDataByVueResource()">使用vue-resource请求数据</button>
     <button @click="getDataByAxios()">使用Axios请求数据</button>
 
     <hr>
     <br/>
+    <br/>
+    <h5>14 vue 父子组件传值</h5>
+
 
     <ul>
       <span style="color: red">使用vue-resource请求数据:</span>
@@ -56,6 +60,7 @@
     data() {
       return {
         msg: '我是一个首页组件msg',
+        title: '首页111',
         flag: true,
         list: [],
         list1: [],
@@ -66,9 +71,10 @@
       'v-life': Life,
     },
     methods: {
-      run: function () {
+      run: function (data) {
 
-        alert(this.msg)
+        alert(this.msg);
+        alert('我是Home组件的run方法'+data);
       },
       getDataByVueResource: function () {
         //请求数据

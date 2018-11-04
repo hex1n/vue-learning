@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-header="http://www.w3.org/1999/xlink">
   <div id="app">
 
     <h2>03 数据绑定 绑定属性 循环渲染 数据渲染</h2>
@@ -211,17 +211,28 @@
     <br>
     <br>
     <hr>
-    <h2>12 vue请求数据</h2>
+    <h2>12 13 vue请求数据</h2>
     <h5>
       请求数据的模板:<br>
       1.vue-resource 官方提供的vue 的一个插件<br>
       2.axios 的使用:<br>
-          1.安装 npm install axios --save<br>
-          2.哪里用哪里引入axios<br>
-      2.axios 的使用:<br>
-      <!--3.vue-resource 官方提供的vue 的一个插件<br>-->
+      1.安装 npm install axios --save<br>
+      2.哪里用哪里引入axios<br>
 
     </h5>
+
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h2>14 vue 父子组件传值</h2>
+    <ul>
+      父组件给子组件传值
+      <li>1.父组件调用子组件的时候,绑定动态属性:v-header :title="title"></li>
+      <li>2.在子组件里面通过 props接收父组件传过来的数据></li>
+    </ul>
+
+
   </div>
 </template>
 

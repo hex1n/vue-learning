@@ -2,8 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
 import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
 
 //表示使用这个插件
 /*
@@ -23,13 +23,40 @@ import VueResource from 'vue-resource'
 *
 * */
 Vue.use(VueResource);
+Vue.use(VueRouter);
+
+//1.创建组件
+import Home from './components/Home';
+import News from './components/News';
+
+//2.配置路由
+const routes = [
+  {path: '/home', component: Home},
+  {path: '/news', component: News},
+
+  {path: '*', redirect: '/home'}, //默认跳转路由
+
+]
+
+//3.实例化VueRouter
+
+const router = new VueRouter({
+  routes//(缩写)相当于routes:routes
+})
+
+
+
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+//4.挂载路由
 new Vue({
   el: '#app',
   router,
-  components: {App},
-  template: '<App/>'
+  render: h => h(App),
+
 })
+
+//根组件的模板里面放上这句话,表示动态加载的路由
+//5.<router-view></router-view> 放在App.vue里面

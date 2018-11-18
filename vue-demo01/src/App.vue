@@ -1,5 +1,10 @@
 <template xmlns:v-header="http://www.w3.org/1999/xlink">
   <div id="app">
+    <router-link to="/home">首页</router-link>
+    <router-link to="/news">新闻</router-link>
+    <hr>
+    <router-view></router-view>
+
 
     <h2>03 数据绑定 绑定属性 循环渲染 数据渲染</h2>
 
@@ -275,8 +280,8 @@
   // 2.挂载组件
   // 3.在模板中使用
   import storage from './model/storage';
-  import Home from './components/Home';
-  import News from './components/News';
+  /*import Home from './components/Home';
+  import News from './components/News';*/
 
   console.log(storage);
   export default {
@@ -322,9 +327,10 @@
     },
     //注册组件
     components: {
+      //手动加载组件
       //前面的组件名称不能喝html标签一样
-      'v-home': Home,
-      'v-news': News
+     /* 'v-home': Home,
+      'v-news': News*/
     }, methods: {
       //放方法的地方
       getMsg() {
